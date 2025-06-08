@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nuit du Badminton</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" />
+</head>
+<body>
+  <section class="section">
+    <div class="container">
+      <div class="columns is-vcentered is-mobile">
+      <div class="column has-text-left">
+        <h1 class="title is-3"><a href="index.html">Nuit du Badminton</a> </h1>
+      </div>
+      <div class="column has-text-right">
+        <h2 class="title is-5"><a href="about.html">Information</a></h2>
+      </div>
+    </div>
+
+
+      <!-- Phase 1 : Inscriptions -->
+      <div class="box">
+        <h2 class="subtitle">Inscription des joueurs</h2>
+        <div class="field has-addons">
+          <div class="control is-expanded">
+            <input id="playerName" class="input" type="text" placeholder="Nom du joueur" />
+          </div>
+          <div class="control">
+            <button class="button is-primary" onclick="addPlayer()">Ajouter Joueur</button>
+          </div>
+          <div class="control">
+            <button class="button is-link" onclick="loadTestPlayers()">Charger Test</button>
+          </div>
+        </div>
+
+        <div class="player-list">
+          <h3 class="subtitle is-5">Joueurs inscrits</h3>
+          <ul id="playerList" class="content"></ul>
+        </div>
+      </div>
+
+      <!-- Phase 2 : Génération des matchs -->
+      <div class="box">
+        <button id="generateBtn" class="button is-success is-fullwidth" onclick="generateMatches()">
+          Générer Matchs (Max 7 terrains)
+        </button>
+      </div>
+
+      <!-- Phase 3 : Matchs en cours -->
+      <div class="box match-list">
+        <h3 class="subtitle">Matchs en cours</h3>
+        <div id="matchList"></div>
+      </div>
+    </div>
+  </section>
+  <button id="endNightBtn" class="button is-danger is-outlined" onclick="exportRanking()">Fin de la nuit du badminton</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
